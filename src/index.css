@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+input,
+textarea {
+	@apply block border border-gray-200 rounded px-2 py-1 w-full text-sm text-gray-700;
+}
+
+label {
+	@apply block text-sm font-medium text-gray-700;
+}
