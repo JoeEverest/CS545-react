@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import Posts from "./Posts";
 import PostDetails from "./PostDetails";
 import AddPost from "./AddPost";
+import { usePosts } from "../context/PostContext";
+import NewPost from "./NewPost";
 
 
 
 function Dashboard() {
   const [title, setTitle] = React.useState("Dashboard");
   const [temp, setTemp] = React.useState("");
-  const [selectedPost, setSelectedPost] = React.useState(null);
-  const [refetch, setRefetch] = useState(false)
+  const { selectedPost, setSelectedPost, refetch, setRefetch } = usePosts()
 
   const [addPost, setAddPost] = useState(false)
 
@@ -27,11 +28,11 @@ function Dashboard() {
         </button>
       </div>
 
-      <Posts setSelectedPost={setSelectedPost} refetch={refetch} />
+      <Posts />
 
 
 
-      {addPost ? <AddPost /> : <>
+      {addPost ? <NewPost /> : <>
         <div className="flex gap-4">
           <input
             type="text"

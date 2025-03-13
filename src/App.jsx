@@ -1,11 +1,12 @@
 import React from "react";
 import Dashboard from "./components/Dashboard";
+import { PostProvider } from "./context/PostContext";
 
 function App() {
   return (
-    <div>
+    <PostProvider>
       <Dashboard />
-    </div>
+    </PostProvider>
   );
 }
 
