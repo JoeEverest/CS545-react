@@ -1,6 +1,8 @@
 import React from "react";
+import { usePosts } from "../context/PostContext";
 
-function Post({ post, setSelectedPost }) {
+function Post({ post }) {
+  const { setSelectedPost } = usePosts()
 
   return (
     <div

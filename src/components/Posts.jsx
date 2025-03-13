@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Post from "./Post";
 import { getAllPosts } from "../api";
+import { usePosts } from "../context/PostContext";
 
-function Posts({ setSelectedPost, refetch }) {
+function Posts() {
+
+  const { refetch, } = usePosts()
 
   const [posts, setPosts] = useState([])
   const [isLoading, setIsLoading] = useState(true)
@@ -33,7 +36,7 @@ function Posts({ setSelectedPost, refetch }) {
       <h2 className="text-xl font-semibold">Posts</h2>
       <div className="grid grid-cols-3 gap-3">
         {posts.map((post) => (
-          <Post post={post} key={post.id} setSelectedPost={setSelectedPost} />
+          <Post post={post} key={post.id} />
         ))}
       </div>
     </div>
