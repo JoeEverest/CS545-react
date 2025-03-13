@@ -55,8 +55,7 @@ function NewPost() {
     }
 
     return (
-        <div>
-
+        <div className='max-w-4xl mx-auto px-2'>
             <h3 className='text-lg font-medium mb-4'>Create new Post</h3>
             <form ref={formRef} onSubmit={handleSubmit} className='space-y-3'>
                 <div>
